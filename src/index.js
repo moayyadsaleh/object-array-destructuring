@@ -7,30 +7,17 @@ import reportWebVitals from "./reportWebVitals";
 
 //Deconstruct the used items below(tesla and honda) then deconstruct the full cars array and display it.
 console.log(cars);
-
-const tesla = {
-  model: "Tesla Model S",
-  topSpeed: "200 mph",
-  topColour: "Red",
-};
+const {
+  model: hondaModel,
+  coloursByPopularity: [hondaTopColour],
+  speedStats: { topSpeed: hondaTopSpeed, zeroToSixty: hondaZeroToSixty },
+} = cars[0];
 
 const {
-  model = "Tesla Model S",
-  topSpeed = "200 mph",
-  topColour = "Red",
-} = tesla;
-
-const honda = {
-  model: "Honda Civic",
-  topSpeed: "140 mph",
-  topColour: "Blue",
-};
-
-const {
-  hondaModel = "Honda Civic",
-  hondaTopSpeed = "140 mph",
-  hondatopColour = "Blue",
-} = honda;
+  model: teslaModel,
+  coloursByPopularity: [teslaTopColour],
+  speedStats: { topSpeed: teslaTopSpeed, zeroToSixty: teslaZeroToSixty },
+} = cars[1];
 
 const App = () => (
   <React.StrictMode>
@@ -39,16 +26,19 @@ const App = () => (
         <th>Brand</th>
         <th>Top Speed</th>
         <th>Top Colour</th>
-      </tr>
-      <tr>
-        <td>{model}</td>
-        <td>{topSpeed}</td>
-        <td>{topColour}</td>
+        <th>Zero to Sixty</th>
       </tr>
       <tr>
         <td>{hondaModel}</td>
-        <td>{hondaModel}</td>
-        <td>{hondaModel}</td>
+        <td>{hondaTopColour}</td>
+        <td>{hondaTopSpeed}</td>
+        <td>{hondaZeroToSixty}</td>
+      </tr>
+      <tr>
+        <td>{teslaModel}</td>
+        <td>{teslaTopColour}</td>
+        <td>{teslaTopSpeed}</td>
+        <td>{teslaZeroToSixty}</td>
       </tr>
     </table>
   </React.StrictMode>
