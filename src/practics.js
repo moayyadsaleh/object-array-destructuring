@@ -1,3 +1,5 @@
+import React from "react";
+import "./styles.css";
 const cars = [
   {
     model: "Honda Civic",
@@ -18,3 +20,4 @@ const cars = [
     },
   },
 ];
+export default cars;

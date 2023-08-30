@@ -1,38 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import animals from "./data";
+import cars from "./practics";
 
 import reportWebVitals from "./reportWebVitals";
 
-//const animals = [
-//{
-//name: "cat",
-//sound: "meow",
-//feedingRequirments: {
-// food: 2,
-//water: 3,
-//},
-//},
-//{ name: "dog", sound: "woof" },
-//];
-//Desrtuctioning the whole array
-const [cat, dog] = animals;
-//console.log(animals);
-
-//Destructure properties of the cat object
-const {
-  name: catName,
-  sound: catSound,
-  feedingRequirments: catFeedingRequirments,
-} = cat;
-
-//console.log(catFeedingRequirments);
-
-// Destructuring properties of the dog object
-const { name: dogName, sound: dogSound, feedingRequirments = "Water" } = dog;
-
-console.log(feedingRequirments);
+//Deconstruct the used items below(tesla and honda) then deconstruct the full cars array and display it.
+console.log(cars);
 
 const tesla = {
   model: "Tesla Model S",
@@ -40,11 +14,23 @@ const tesla = {
   topColour: "Red",
 };
 
+const {
+  model = "Tesla Model S",
+  topSpeed = "200 mph",
+  topColour = "Red",
+} = tesla;
+
 const honda = {
   model: "Honda Civic",
   topSpeed: "140 mph",
   topColour: "Blue",
 };
+
+const {
+  hondaModel = "Honda Civic",
+  hondaTopSpeed = "140 mph",
+  hondatopColour = "Blue",
+} = honda;
 
 const App = () => (
   <React.StrictMode>
@@ -55,14 +41,14 @@ const App = () => (
         <th>Top Colour</th>
       </tr>
       <tr>
-        <td>{tesla.model}</td>
-        <td>{tesla.topSpeed}</td>
-        <td>{tesla.topColour}</td>
+        <td>{model}</td>
+        <td>{topSpeed}</td>
+        <td>{topColour}</td>
       </tr>
       <tr>
-        <td>{honda.model}</td>
-        <td>{honda.topSpeed}</td>
-        <td>{honda.topColour}</td>
+        <td>{hondaModel}</td>
+        <td>{hondaModel}</td>
+        <td>{hondaModel}</td>
       </tr>
     </table>
   </React.StrictMode>
